@@ -1,3 +1,8 @@
+> Historical documentation retained for provenance. The delivered corpus, reports,
+> review records, and archive described below are not included in this repository.
+> Runtime/version and validation claims below are historical, not fresh evidence.
+> Use README.md and docs/RELEASE_READINESS.md for current instructions and checks.
+
 # Memory interference — v1.1.0
 
 A reproducible, model-free dataset generator for temporal memory: retrieve a value, select a revision, respect a historical cutoff, and resist distracting entities, keys, labels, and stale recollections. This lane covers temporal state only. It contains no social perspectives, planning tasks, or factual knowledge.
@@ -62,4 +67,4 @@ The scorer checks complete ID coverage, rejects duplicate/unknown IDs, and repor
 
 Edit `configs/sample.json`: `seed`, IID world counts, `event_count`, delay levels, revision levels, and the three OOD settings. Configuration validation requires each OOD setting to change only its named structural factor. All streams have three query modes, four interference types, and recall on/off. Core records form a complete factorial; six edge cases are added per world. New seeds create independent namespaces. Freeze the config and generator version before evaluation; changing the number of worlds can change hash-ranked split assignments.
 
-See [formal semantics](docs/SEMANTICS.md), [dataset card](DATASET_CARD.md), [experiment plan](EXPERIMENT_PLAN.md), and [measured validation](reports/VALIDATION.md). [The example](examples/temporal-example.json) and its prompt/answer were generated mechanically. Prior failed checks are retained in `reports/development_checks.jsonl`. The v1.0.0 independent review found two issues, addressed in [the v1.1.0 amendment](AMENDMENT_1_1_0.md). The original release is preserved in `archives/memory-interference-1.0.0.tar.gz`. Focused independent recheck is pending; nothing has been uploaded or published.
+See [formal semantics](docs/SEMANTICS.md), dataset card (`DATASET_CARD.md`, omitted), experiment plan (`EXPERIMENT_PLAN.md`, omitted), and measured validation (`reports/VALIDATION.md`, omitted). [The example](examples/temporal-example.json) and its prompt/answer were generated mechanically. Prior failed checks are retained in `reports/development_checks.jsonl`. The v1.0.0 independent review found two issues, addressed in the v1.1.0 amendment (`AMENDMENT_1_1_0.md`, omitted). The original release is preserved in `archives/memory-interference-1.0.0.tar.gz`. Focused independent recheck is pending; nothing has been uploaded or published.

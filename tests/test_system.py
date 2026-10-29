@@ -241,6 +241,24 @@ class CorpusTests(unittest.TestCase):
             with path.open("a") as out: out.write(canonical(original) + "\n")
             with self.assertRaises(AssertionError): summarize(sorted(a.glob("*.jsonl")))
 
+    def test_reproduction_checks_saved_corpus(self):
+        from scripts.reproduce import stored_files_match
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "corpus"
+            manifest = generate(tiny_config(), destination)
+            self.assertTrue(stored_files_match(destination, manifest["files"]))
+            path = destination / "test.jsonl"
+            original = path.read_bytes()
+            path.write_bytes(original.replace(b'"prompt":', b'"broken":', 1))
+            self.assertFalse(stored_files_match(destination, manifest["files"]))
+            path.write_bytes(original)
+            extra = destination / "extra.jsonl"
+            extra.write_bytes(b"")
+            self.assertFalse(stored_files_match(destination, manifest["files"]))
+            extra.unlink()
+            path.unlink()
+            self.assertFalse(stored_files_match(destination, manifest["files"]))
+
     def test_budget_failure_keeps_partial_evidence(self):
         with tempfile.TemporaryDirectory() as temporary:
             config = tiny_config(); config["max_artifact_bytes"] = 1000

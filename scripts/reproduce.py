@@ -1,4 +1,4 @@
-"""Recompute every JSONL byte hash without writing a second corpus."""
+"""Check saved and regenerated JSONL hashes without writing a second corpus."""
 
 import argparse
 from collections import Counter
@@ -12,6 +12,23 @@ import time
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from memory_interference.generator import canonical, records
 from memory_interference.__main__ import source_hashes
+
+
+def stored_files_match(dataset, expected):
+    """Check the actual corpus too; a manifest alone is not reproduction evidence."""
+    if {p.name for p in dataset.glob("*.jsonl")} != {f["file"] for f in expected}:
+        return False
+    for entry in expected:
+        checksum = hashlib.sha256()
+        count = size = 0
+        with (dataset / entry["file"]).open("rb") as source:
+            for line in source:
+                checksum.update(line)
+                count += 1
+                size += len(line)
+        if (checksum.hexdigest(), count, size) != (entry["sha256"], entry["records"], entry["bytes"]):
+            return False
+    return True
 
 
 def main():
@@ -29,8 +46,10 @@ def main():
         counts[filename] += 1; sizes[filename] += len(raw)
     observed = [{"file": filename, "sha256": hashes[filename].hexdigest(), "records": counts[filename],
                  "bytes": sizes[filename]} for filename in sorted(hashes)]
-    passed = observed == manifest["files"] and source_hashes() == manifest["source_sha256"]
+    stored_match = stored_files_match(args.dataset, observed)
+    passed = stored_match and observed == manifest["files"] and source_hashes() == manifest["source_sha256"]
     report = {"result": "passed" if passed else "failed", "files": observed,
+              "stored_files_match": stored_match,
               "source_hashes_match": source_hashes() == manifest["source_sha256"],
               "elapsed_seconds": round(time.perf_counter() - started, 3),
               "peak_rss_kib_linux": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
