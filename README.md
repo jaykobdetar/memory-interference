@@ -49,4 +49,4 @@ The initial commit is a source-only preservation snapshot of the AI-assisted pro
 
 [README.source.md](README.source.md) preserves historical documentation. Its datasets, dataset card, experiment plan, amendment, reports, and archive are omitted; they are not fresh supporting evidence. Current checks and outstanding publication decisions are recorded in [the release checklist](docs/RELEASE_READINESS.md).
 
-**License pending:** no license grant is included. The owner must confirm rights and choose a license before an open-source release. Repository visibility remains private pending review.
+Licensed under [MIT](LICENSE) at the repository owner's direction. On 2026-10-29 the owner stated that all code was created by AI and authorized MIT licensing. This records the owner's assertion and licensing choice; it does not independently establish copyright ownership or third-party clearance. Existing notices are preserved. Repository visibility remains private pending review.

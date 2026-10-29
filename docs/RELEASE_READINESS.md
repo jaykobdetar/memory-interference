@@ -17,6 +17,7 @@ Linux, Python 3.14.7; no model calls, downloads of models, GPU work, or paid ser
 | CLI help and first-record preview | Passed |
 | `.venv/bin/python -m build --no-isolation` | Source distribution and wheel built successfully |
 | Installed wheel, isolated `python -I -m memory_interference --help` | Passed |
+| MIT packaging follow-up | Wheel and source distribution include the exact LICENSE; wheel metadata declares MIT |
 | Extracted source distribution test suite | 29 passed; required source resources verified |
 | `git diff --check` | Passed |
 
@@ -26,9 +27,9 @@ Fresh reports and the generated corpus are local ignored outputs in `reports/` a
 
 ## Scope and provenance
 
-The available Git history contains one imported snapshot commit and 22 unique tracked file blobs. All tracked source, tests, configuration, schemas, examples, and documentation were inspected. A targeted scan of every reachable historical file blob for private-key headers, GitHub/AWS token formats, credential assignments, local home paths, and email addresses found no matches. The commit author uses a GitHub noreply address. This limited pattern check is not proof that every possible secret or ownership issue is absent. Original local history was not imported and is outside this review.
+The initial history review covered one imported snapshot commit and 22 unique tracked file blobs. All tracked source, tests, configuration, schemas, examples, and documentation were inspected. A targeted scan of every reachable historical file blob for private-key headers, GitHub/AWS token formats, credential assignments, local home paths, and email addresses found no matches. The commit author uses a GitHub noreply address. This limited pattern check is not proof that every possible secret or ownership issue is absent. Original local history was not imported and is outside this review.
 
-Generation uses synthetic namespaces and deterministic seeds. The relational oracle does not import generator, renderer, or state-machine selection code. Algorithmic independence does not establish independent authorship, review, or empirical scientific validity. Existing AI-assistance provenance is retained. No license or third-party ownership grant was inferred.
+Generation uses synthetic namespaces and deterministic seeds. The relational oracle does not import generator, renderer, or state-machine selection code. Algorithmic independence does not establish independent authorship, review, or empirical scientific validity. Existing AI-assistance provenance is retained. On 2026-10-29, when asked about rights and licensing, the owner stated that all code was created by AI and explicitly authorized MIT licensing. The MIT license and package metadata implement that instruction. This is an attributed owner assertion, not an independent legal determination of ownership or third-party clearance; existing notices remain intact.
 
 Missing dataset cards, plans, amendment reports, development logs, and release archives remain explicitly marked omitted in `README.source.md`. Their missing links were removed; no replacement historical evidence was invented.
 
@@ -39,7 +40,7 @@ Missing dataset cards, plans, amendment reports, development logs, and release a
 - [x] Regression for reproduction of the actual stored corpus.
 - [x] Generated output, build artifacts, and environment exclusions.
 - [x] Source distribution includes configuration, schemas, examples, scripts, tests, and docs.
-- [ ] Owner confirms source rights/third-party provenance and selects a license; no license currently grants reuse.
+- [x] Owner authorized MIT licensing with the AI-origin assertion recorded above; LICENSE and package metadata added.
 - [ ] Owner reviews this branch/draft PR and decides whether the private repository should become public.
 - [ ] If claiming broad runtime compatibility, verify Python 3.10 through 3.13 and other Unix platforms; this preparation ran only Python 3.14.7 on Linux. Windows reporting tools are unsupported.
 - [ ] Before publishing benchmark conclusions, conduct independent methodology review, tokenizer calibration, and real model evaluation. These are not required to describe this as an experimental generator.
