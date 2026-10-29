@@ -1,0 +1,31 @@
+# Formal semantics and generation
+
+A stream is a sequence of events with contiguous positions `1..N` and unique event IDs. A slot is `(entity ID, key)`. Labels are decorative and may collide. Entity identities do not change during an episode.
+
+`WRITE(entity,key,value,revision,supersedes)` creates the next revision of one slot. `DELETE` also creates a revision, containing a tombstone instead of a value. The first mutation has revision 1 and no predecessor. Every later mutation must increment by one and point to the preceding mutation of the same slot. A deletion can be followed by another write, which recreates the slot at a new revision.
+
+`RECALL(entity,key,value,ref)` quotes an earlier WRITE exactly. It has no revision or predecessor and never mutates state. A quotation remains legal after its source has been superseded or deleted. It cannot quote a future event or a DELETE. The visible ledger uses `None` for absent reference/revision fields; the structured JSON uses `null`.
+
+For a query with cutoff `c`, let `H` be the mutations of the requested slot whose positions are at most `c`. A `current` query uses `c=N` and selects the largest revision in `H`. An `as_of` query uses its explicit cutoff and the same selection rule. A `revision` query selects the exact requested revision in `H`. Later mutations and all RECALL events are irrelevant to selection. No selected mutation means `unset`; selected DELETE means `deleted`; selected WRITE means `present`. Provenance is always the selected mutation, never a recall.
+
+The oracle is a stateless filter-and-maximum implementation in `oracle.py`. The independent forward implementation in `machine.py` validates links and maintains per-slot mutation histories. They share the formal contract, not selection code. Exhaustive tests additionally compare against list-position semantics. This is algorithmic independence; independent human/agent review is still pending.
+
+## Experimental construction
+
+1. Hash-rank IID world indices into disjoint train/validation/test groups. OOD worlds use distinct derivation domains. Each world is a namespace for independent reset episodes, not one continuously evolving story across rows.
+2. Derive a pair seed from the schema version, world, length, evidence delay, revision count, mode, and outcome. SHA-256 inputs are canonical JSON tuples; the full hexadecimal `pair_id` converted to an integer seeds Python `random.Random`.
+3. Sample opaque symbols, the query slot, and distinct target-chain values. Choose the final revision for current queries; an earlier revision with enough trailing space for multi-revision as-of queries; a seeded arbitrary existing revision for named-revision queries. One-revision cases are retrieval controls.
+4. Place the selected mutation at `N-delay`. Distribute earlier and later target revisions on the appropriate sides of that anchor. For as-of queries a separately seeded positive gap places the cutoff after the anchor; future target revisions are placed strictly after the cutoff. The cutoff event is a mutation of another slot. At the tightest revision-count/delay setting, the earliest target revision may be excluded to leave space for a gap and the final recall slot. All target revisions are valid sequential mutations, even those after the cutoff.
+5. Fill other positions with four distractor-slot trajectories. Across the four interference variants, their values, positions, revision numbers, and predecessor links are identical; only entity/key overlap changes. Unrelated slots share neither field, same-entity slots share the entity, same-key slots share the key, and near-identity slots share the key and label while their IDs differ by one character.
+6. The recall-on condition replaces the final distractor WRITE with a legal quotation, preferentially of a nonselected target revision. A one-revision condition may have no stale target value to quote; `recall_conflict` records the realized condition. Recall presence and actual conflict are different variables. This ablation also changes one final event's operation.
+7. Validate with the forward machine, then compute targets and certificates exclusively with the oracle. Render the fixed template and compute spans from actual character offsets.
+
+Only the eight interference × recall variants share a `pair_id` and answer. Modes, delays, revision counts, and outcomes are separate seeded episodes within a world. They are factorial contrasts, not identical-stream counterfactuals. Missing-slot cases use an unqueried chain and expose `revision_count=0`, `answer_delay=null`; they are supplemental diagnostics, not core factorial cells.
+
+## Serialization and reproducibility
+
+Schema and generator version are `memory-interference/1.1.0`. JSONL uses UTF-8, sorted keys, compact separators, and one trailing newline per record. Spans are `[start,end)` Unicode code-point offsets into `prompt`, not byte or token offsets. Event/value tokens are ASCII in v1. Files are deterministic for a frozen configuration, source, and compatible Python RNG implementation; the delivered runtime version is pinned in the manifest. Reproduction is verified by regenerating every byte hash.
+
+The manifest includes canonical configuration hash, per-file SHA-256/count/size, world assignments, source/test/script/schema hashes, Python version, and provenance. Timestamps and machine-specific paths are excluded from dataset manifests. Runtime durations and resource usage live separately in reports. Generation order is deliberately deterministic; shuffle within each already assigned split for learning and evaluate each prompt independently.
+
+The `cutoff_gap` factor is the number of events between the selected mutation and the as-of cutoff. It is positive for present/deleted as-of answers and null for other modes or unset answers. A separate SHA-256 domain (`cutoff-gap`) seeds its sampling. Gap support depends on available delay and later-revision space; it is recorded, not claimed as an orthogonal balanced factor. Target/evidence/certificate comparison is recursively type-sensitive. Integer fields require exact parsed Python `int`, excluding booleans and integral floats; query/entity/key/reference primitives are checked before invoking the unchanged oracles.

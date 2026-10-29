@@ -1,0 +1,536 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:memory-interference:record:1.1.0",
+  "title": "Memory interference record v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "group_id",
+    "pair_id",
+    "split",
+    "generator_seed",
+    "factors",
+    "events",
+    "query",
+    "prompt",
+    "target",
+    "evidence",
+    "certificate"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "memory-interference/1.1.0"
+    },
+    "id": {
+      "$ref": "#/$defs/hash"
+    },
+    "group_id": {
+      "$ref": "#/$defs/hash"
+    },
+    "pair_id": {
+      "$ref": "#/$defs/hash"
+    },
+    "generator_seed": {
+      "$ref": "#/$defs/hash"
+    },
+    "split": {
+      "enum": [
+        "train",
+        "validation",
+        "test",
+        "ood_length",
+        "ood_delay",
+        "ood_revisions"
+      ]
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "query": {
+      "$ref": "#/$defs/query"
+    },
+    "target": {
+      "$ref": "#/$defs/target"
+    },
+    "factors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "event_count",
+        "answer_delay",
+        "revision_count",
+        "interference",
+        "recall",
+        "recall_conflict",
+        "subset",
+        "expected_status",
+        "cutoff_gap"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "current",
+            "as_of",
+            "revision"
+          ]
+        },
+        "event_count": {
+          "type": "integer",
+          "minimum": 32,
+          "maximum": 20000
+        },
+        "answer_delay": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "revision_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16
+        },
+        "interference": {
+          "enum": [
+            "unrelated",
+            "same_entity",
+            "same_key",
+            "near_identity"
+          ]
+        },
+        "recall": {
+          "type": "boolean"
+        },
+        "recall_conflict": {
+          "type": "boolean"
+        },
+        "subset": {
+          "enum": [
+            "core",
+            "edge"
+          ]
+        },
+        "expected_status": {
+          "enum": [
+            "present",
+            "deleted",
+            "unset"
+          ]
+        },
+        "cutoff_gap": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "evidence": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "event_id",
+            "event_span",
+            "answer_span",
+            "answer_text"
+          ],
+          "properties": {
+            "event_id": {
+              "$ref": "#/$defs/eventId"
+            },
+            "event_span": {
+              "$ref": "#/$defs/span"
+            },
+            "answer_span": {
+              "$ref": "#/$defs/span"
+            },
+            "answer_text": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eligible_mutations",
+        "ignored_recalls",
+        "excluded_after_cutoff",
+        "selected_event",
+        "selection_rule"
+      ],
+      "properties": {
+        "eligible_mutations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/eventId"
+          }
+        },
+        "ignored_recalls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/eventId"
+          }
+        },
+        "excluded_after_cutoff": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/eventId"
+          }
+        },
+        "selected_event": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/eventId"
+            }
+          ]
+        },
+        "selection_rule": {
+          "enum": [
+            "exact_revision",
+            "maximum_eligible_revision"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "eventId": {
+      "type": "string",
+      "pattern": "^e[0-9]{5}$"
+    },
+    "nullableEventId": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/eventId"
+        }
+      ]
+    },
+    "span": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "integer",
+          "minimum": 0
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "position",
+        "op",
+        "entity",
+        "label",
+        "key",
+        "value",
+        "revision",
+        "supersedes",
+        "ref"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/eventId"
+        },
+        "position": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "op": {
+          "enum": [
+            "WRITE",
+            "DELETE",
+            "RECALL"
+          ]
+        },
+        "entity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "revision": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "supersedes": {
+          "$ref": "#/$defs/nullableEventId"
+        },
+        "ref": {
+          "$ref": "#/$defs/nullableEventId"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "RECALL"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "revision": {
+                "type": "null"
+              },
+              "supersedes": {
+                "type": "null"
+              },
+              "ref": {
+                "$ref": "#/$defs/eventId"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "revision": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "ref": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "DELETE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "entity",
+        "key",
+        "cutoff",
+        "revision"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "current",
+            "as_of",
+            "revision"
+          ]
+        },
+        "entity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cutoff": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "revision": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "revision"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "revision": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "revision": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "value",
+        "event_id",
+        "revision"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "present",
+            "deleted",
+            "unset"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "event_id": {
+          "$ref": "#/$defs/nullableEventId"
+        },
+        "revision": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "present"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "unset"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "event_id": {
+                "type": "null"
+              },
+              "revision": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "event_id": {
+                "$ref": "#/$defs/eventId"
+              },
+              "revision": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "$comment": "Numeric representation policy: the semantic validator and scorer require parsed integers to have exact Python int type; booleans and integral floats are not accepted for integer fields, even where mathematical JSON Schema integer semantics allow a float."
+}

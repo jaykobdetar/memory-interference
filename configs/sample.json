@@ -1,0 +1,14 @@
+{
+  "schema_version": "memory-interference/1.1.0",
+  "seed": 271828,
+  "groups": {"train": 4, "validation": 2, "test": 2},
+  "event_count": 80,
+  "delays": [8, 24],
+  "revisions": [1, 3],
+  "ood": {
+    "length": {"groups": 1, "event_count": 320, "delays": [8, 24], "revisions": [1, 3]},
+    "delay": {"groups": 1, "event_count": 80, "delays": [48, 64], "revisions": [1, 3]},
+    "revisions": {"groups": 1, "event_count": 80, "delays": [8, 24], "revisions": [8]}
+  },
+  "max_artifact_bytes": 49000000
+}

@@ -1,0 +1,446 @@
+{
+  "certificate": {
+    "eligible_mutations": [
+      "e00024"
+    ],
+    "excluded_after_cutoff": [
+      "e00029",
+      "e00031"
+    ],
+    "ignored_recalls": [
+      "e00032"
+    ],
+    "selected_event": "e00024",
+    "selection_rule": "maximum_eligible_revision"
+  },
+  "events": [
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00001",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 1,
+      "ref": null,
+      "revision": 1,
+      "supersedes": null,
+      "value": "Vcfa2aeb45643_e31fe"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00002",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 2,
+      "ref": null,
+      "revision": 2,
+      "supersedes": "e00001",
+      "value": "Vcfa2aeb45643_8b330"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00003",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 3,
+      "ref": null,
+      "revision": 3,
+      "supersedes": "e00002",
+      "value": "Vcfa2aeb45643_9b51e"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768d",
+      "id": "e00004",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 4,
+      "ref": null,
+      "revision": 1,
+      "supersedes": null,
+      "value": "Vcfa2aeb45643_8b330"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768a",
+      "id": "e00005",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 5,
+      "ref": null,
+      "revision": 1,
+      "supersedes": null,
+      "value": "Vcfa2aeb45643_c8a67"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768d",
+      "id": "e00006",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 6,
+      "ref": null,
+      "revision": 2,
+      "supersedes": "e00004",
+      "value": "Vcfa2aeb45643_3d253"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00007",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 7,
+      "ref": null,
+      "revision": 4,
+      "supersedes": "e00003",
+      "value": "Vcfa2aeb45643_4fdff"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768e",
+      "id": "e00008",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 8,
+      "ref": null,
+      "revision": 1,
+      "supersedes": null,
+      "value": "Vcfa2aeb45643_8b330"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768e",
+      "id": "e00009",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 9,
+      "ref": null,
+      "revision": 2,
+      "supersedes": "e00008",
+      "value": "Vcfa2aeb45643_61352"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768e",
+      "id": "e00010",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 10,
+      "ref": null,
+      "revision": 3,
+      "supersedes": "e00009",
+      "value": "Vcfa2aeb45643_99bb0"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768e",
+      "id": "e00011",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 11,
+      "ref": null,
+      "revision": 4,
+      "supersedes": "e00010",
+      "value": "Vcfa2aeb45643_61352"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00012",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 12,
+      "ref": null,
+      "revision": 5,
+      "supersedes": "e00007",
+      "value": "Vcfa2aeb45643_e6894"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768d",
+      "id": "e00013",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 13,
+      "ref": null,
+      "revision": 3,
+      "supersedes": "e00006",
+      "value": "Vcfa2aeb45643_e41fb"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768e",
+      "id": "e00014",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 14,
+      "ref": null,
+      "revision": 5,
+      "supersedes": "e00011",
+      "value": "Vcfa2aeb45643_a0753"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768a",
+      "id": "e00015",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 15,
+      "ref": null,
+      "revision": 2,
+      "supersedes": "e00005",
+      "value": "Vcfa2aeb45643_9b51e"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00016",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 16,
+      "ref": null,
+      "revision": 6,
+      "supersedes": "e00012",
+      "value": "Vcfa2aeb45643_3ac97"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00017",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 17,
+      "ref": null,
+      "revision": 7,
+      "supersedes": "e00016",
+      "value": "Vcfa2aeb45643_e3ee0"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768a",
+      "id": "e00018",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 18,
+      "ref": null,
+      "revision": 3,
+      "supersedes": "e00015",
+      "value": "Vcfa2aeb45643_0c846"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00019",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 19,
+      "ref": null,
+      "revision": 8,
+      "supersedes": "e00017",
+      "value": "Vcfa2aeb45643_99bb0"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768e",
+      "id": "e00020",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 20,
+      "ref": null,
+      "revision": 6,
+      "supersedes": "e00014",
+      "value": "Vcfa2aeb45643_35a46"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768d",
+      "id": "e00021",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 21,
+      "ref": null,
+      "revision": 4,
+      "supersedes": "e00013",
+      "value": "Vcfa2aeb45643_b9a32"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768a",
+      "id": "e00022",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 22,
+      "ref": null,
+      "revision": 4,
+      "supersedes": "e00018",
+      "value": "Vcfa2aeb45643_35a46"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00023",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 23,
+      "ref": null,
+      "revision": 9,
+      "supersedes": "e00019",
+      "value": "Vcfa2aeb45643_4fdff"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768b",
+      "id": "e00024",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 24,
+      "ref": null,
+      "revision": 1,
+      "supersedes": null,
+      "value": "Vcfa2aeb45643_a73e3"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768c",
+      "id": "e00025",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 25,
+      "ref": null,
+      "revision": 10,
+      "supersedes": "e00023",
+      "value": "Vcfa2aeb45643_dcd3b"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768a",
+      "id": "e00026",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 26,
+      "ref": null,
+      "revision": 5,
+      "supersedes": "e00022",
+      "value": "Vcfa2aeb45643_dcd3b"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768d",
+      "id": "e00027",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 27,
+      "ref": null,
+      "revision": 5,
+      "supersedes": "e00021",
+      "value": "Vcfa2aeb45643_b9a32"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768d",
+      "id": "e00028",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 28,
+      "ref": null,
+      "revision": 6,
+      "supersedes": "e00027",
+      "value": "Vcfa2aeb45643_3d253"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768b",
+      "id": "e00029",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 29,
+      "ref": null,
+      "revision": 2,
+      "supersedes": "e00024",
+      "value": "Vcfa2aeb45643_9b51e"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768e",
+      "id": "e00030",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 30,
+      "ref": null,
+      "revision": 7,
+      "supersedes": "e00020",
+      "value": "Vcfa2aeb45643_dcd3b"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768b",
+      "id": "e00031",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "WRITE",
+      "position": 31,
+      "ref": null,
+      "revision": 3,
+      "supersedes": "e00029",
+      "value": "Vcfa2aeb45643_fd6b3"
+    },
+    {
+      "entity": "Ecfa2aeb45643_768b",
+      "id": "e00032",
+      "key": "Kcfa2aeb45643_75eb",
+      "label": "Lcfa2aeb45643_3",
+      "op": "RECALL",
+      "position": 32,
+      "ref": "e00029",
+      "revision": null,
+      "supersedes": null,
+      "value": "Vcfa2aeb45643_9b51e"
+    }
+  ],
+  "evidence": {
+    "answer_span": [
+      4654,
+      4673
+    ],
+    "answer_text": "Vcfa2aeb45643_a73e3",
+    "event_id": "e00024",
+    "event_span": [
+      4521,
+      4673
+    ]
+  },
+  "factors": {
+    "answer_delay": 8,
+    "cutoff_gap": 3,
+    "event_count": 32,
+    "expected_status": "present",
+    "interference": "near_identity",
+    "mode": "as_of",
+    "recall": true,
+    "recall_conflict": true,
+    "revision_count": 3,
+    "subset": "core"
+  },
+  "generator_seed": "3ae8306f81d2cf6f0f747e9cc924f1120cc79d342d4de0a06fc3131a6b429567",
+  "group_id": "cfa2aeb45643eb29337ff0f177ed8635a2114e757b03c627228f3dc26e811333",
+  "id": "79d2e6a36fa90b4933b10928fed03a785a6db7250906efe5b695f422806b1bb4",
+  "pair_id": "3ae8306f81d2cf6f0f747e9cc924f1120cc79d342d4de0a06fc3131a6b429567",
+  "prompt": "Temporal ledger task v1. Entity IDs are authoritative; display labels may repeat.\nWRITE and DELETE increment the revision of exactly one (entity ID, key) slot.\nsupersedes identifies the previous mutation of that slot. DELETE leaves a tombstone.\nRECALL quotes an earlier WRITE; it never changes state, even if printed later.\nThe ledger token None means no reference or revision.\nAt a cutoff, consider only mutations at positions less than or equal to that cutoff.\nA state query selects the highest eligible revision. A revision query selects exactly\nthe requested revision, even if later revisions exist. Never follow a display label.\nIf the selected mutation is DELETE answer [DELETED]; if no eligible mutation exists\nanswer [UNSET]. Otherwise copy its value. Return JSON with status, value, event_id,\nrevision. Status is present/deleted/unset. Value is null for deleted/unset; event_id\nand revision are null only for unset. Use the selected mutation as provenance.\nEVENTS\ne00001 pos=1 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=1 supersedes=None ref=None value=Vcfa2aeb45643_e31fe\ne00002 pos=2 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=2 supersedes=e00001 ref=None value=Vcfa2aeb45643_8b330\ne00003 pos=3 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=3 supersedes=e00002 ref=None value=Vcfa2aeb45643_9b51e\ne00004 pos=4 WRITE entity=Ecfa2aeb45643_768d label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=1 supersedes=None ref=None value=Vcfa2aeb45643_8b330\ne00005 pos=5 WRITE entity=Ecfa2aeb45643_768a label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=1 supersedes=None ref=None value=Vcfa2aeb45643_c8a67\ne00006 pos=6 WRITE entity=Ecfa2aeb45643_768d label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=2 supersedes=e00004 ref=None value=Vcfa2aeb45643_3d253\ne00007 pos=7 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=4 supersedes=e00003 ref=None value=Vcfa2aeb45643_4fdff\ne00008 pos=8 WRITE entity=Ecfa2aeb45643_768e label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=1 supersedes=None ref=None value=Vcfa2aeb45643_8b330\ne00009 pos=9 WRITE entity=Ecfa2aeb45643_768e label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=2 supersedes=e00008 ref=None value=Vcfa2aeb45643_61352\ne00010 pos=10 WRITE entity=Ecfa2aeb45643_768e label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=3 supersedes=e00009 ref=None value=Vcfa2aeb45643_99bb0\ne00011 pos=11 WRITE entity=Ecfa2aeb45643_768e label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=4 supersedes=e00010 ref=None value=Vcfa2aeb45643_61352\ne00012 pos=12 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=5 supersedes=e00007 ref=None value=Vcfa2aeb45643_e6894\ne00013 pos=13 WRITE entity=Ecfa2aeb45643_768d label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=3 supersedes=e00006 ref=None value=Vcfa2aeb45643_e41fb\ne00014 pos=14 WRITE entity=Ecfa2aeb45643_768e label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=5 supersedes=e00011 ref=None value=Vcfa2aeb45643_a0753\ne00015 pos=15 WRITE entity=Ecfa2aeb45643_768a label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=2 supersedes=e00005 ref=None value=Vcfa2aeb45643_9b51e\ne00016 pos=16 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=6 supersedes=e00012 ref=None value=Vcfa2aeb45643_3ac97\ne00017 pos=17 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=7 supersedes=e00016 ref=None value=Vcfa2aeb45643_e3ee0\ne00018 pos=18 WRITE entity=Ecfa2aeb45643_768a label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=3 supersedes=e00015 ref=None value=Vcfa2aeb45643_0c846\ne00019 pos=19 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=8 supersedes=e00017 ref=None value=Vcfa2aeb45643_99bb0\ne00020 pos=20 WRITE entity=Ecfa2aeb45643_768e label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=6 supersedes=e00014 ref=None value=Vcfa2aeb45643_35a46\ne00021 pos=21 WRITE entity=Ecfa2aeb45643_768d label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=4 supersedes=e00013 ref=None value=Vcfa2aeb45643_b9a32\ne00022 pos=22 WRITE entity=Ecfa2aeb45643_768a label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=4 supersedes=e00018 ref=None value=Vcfa2aeb45643_35a46\ne00023 pos=23 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=9 supersedes=e00019 ref=None value=Vcfa2aeb45643_4fdff\ne00024 pos=24 WRITE entity=Ecfa2aeb45643_768b label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=1 supersedes=None ref=None value=Vcfa2aeb45643_a73e3\ne00025 pos=25 WRITE entity=Ecfa2aeb45643_768c label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=10 supersedes=e00023 ref=None value=Vcfa2aeb45643_dcd3b\ne00026 pos=26 WRITE entity=Ecfa2aeb45643_768a label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=5 supersedes=e00022 ref=None value=Vcfa2aeb45643_dcd3b\ne00027 pos=27 WRITE entity=Ecfa2aeb45643_768d label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=5 supersedes=e00021 ref=None value=Vcfa2aeb45643_b9a32\ne00028 pos=28 WRITE entity=Ecfa2aeb45643_768d label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=6 supersedes=e00027 ref=None value=Vcfa2aeb45643_3d253\ne00029 pos=29 WRITE entity=Ecfa2aeb45643_768b label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=2 supersedes=e00024 ref=None value=Vcfa2aeb45643_9b51e\ne00030 pos=30 WRITE entity=Ecfa2aeb45643_768e label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=7 supersedes=e00020 ref=None value=Vcfa2aeb45643_dcd3b\ne00031 pos=31 WRITE entity=Ecfa2aeb45643_768b label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=3 supersedes=e00029 ref=None value=Vcfa2aeb45643_fd6b3\ne00032 pos=32 RECALL entity=Ecfa2aeb45643_768b label=Lcfa2aeb45643_3 key=Kcfa2aeb45643_75eb revision=None supersedes=None ref=e00029 value=Vcfa2aeb45643_9b51e\nQUERY mode=as_of entity=Ecfa2aeb45643_768b key=Kcfa2aeb45643_75eb cutoff=27 revision=None\nANSWER:\n",
+  "query": {
+    "cutoff": 27,
+    "entity": "Ecfa2aeb45643_768b",
+    "key": "Kcfa2aeb45643_75eb",
+    "mode": "as_of",
+    "revision": null
+  },
+  "schema_version": "memory-interference/1.1.0",
+  "split": "test",
+  "target": {
+    "event_id": "e00024",
+    "revision": 1,
+    "status": "present",
+    "value": "Vcfa2aeb45643_a73e3"
+  }
+}
