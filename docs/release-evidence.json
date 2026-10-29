@@ -1,0 +1,206 @@
+{
+  "base_commit": "dfc99b1",
+  "config": {
+    "delays": [
+      8,
+      24
+    ],
+    "event_count": 80,
+    "groups": {
+      "test": 2,
+      "train": 4,
+      "validation": 2
+    },
+    "max_artifact_bytes": 49000000,
+    "ood": {
+      "delay": {
+        "delays": [
+          48,
+          64
+        ],
+        "event_count": 80,
+        "groups": 1,
+        "revisions": [
+          1,
+          3
+        ]
+      },
+      "length": {
+        "delays": [
+          8,
+          24
+        ],
+        "event_count": 320,
+        "groups": 1,
+        "revisions": [
+          1,
+          3
+        ]
+      },
+      "revisions": {
+        "delays": [
+          8,
+          24
+        ],
+        "event_count": 80,
+        "groups": 1,
+        "revisions": [
+          8
+        ]
+      }
+    },
+    "revisions": [
+      1,
+      3
+    ],
+    "schema_version": "memory-interference/1.1.0",
+    "seed": 271828
+  },
+  "config_sha256": "86dbd1c78d0195203cdb6eef1446a1617557daec7490fc506616217ff85aec73",
+  "files": [
+    {
+      "bytes": 3148718,
+      "file": "ood_delay.jsonl",
+      "records": 102,
+      "sha256": "30c0cfaabc10a0b6d5887901bbf8af2f784b7abdde63a3eb010cbd68af50db0d"
+    },
+    {
+      "bytes": 12007358,
+      "file": "ood_length.jsonl",
+      "records": 102,
+      "sha256": "e75e3788e19a3f45ed82e1369560dceda5205fe71bc78ba96f7d85c34b2f4586"
+    },
+    {
+      "bytes": 1669156,
+      "file": "ood_revisions.jsonl",
+      "records": 54,
+      "sha256": "b3a9c5fa35f336ed848a2fa0c85ce457f217a390796f9ec1ba28b1def069f244"
+    },
+    {
+      "bytes": 6296663,
+      "file": "test.jsonl",
+      "records": 204,
+      "sha256": "0e819a926715712c086376f4ed8ff6d312096e847bc3fd195c8f8ae7c2368d13"
+    },
+    {
+      "bytes": 12593732,
+      "file": "train.jsonl",
+      "records": 408,
+      "sha256": "a2972cdd6a490b1502cba4af49931f376cacbbf0e12ababf3a454b36a6908aef"
+    },
+    {
+      "bytes": 6297887,
+      "file": "validation.jsonl",
+      "records": 204,
+      "sha256": "7da99b3199e288020394b20344081b05326481ba5ab44693840e673cc2d2b2f0"
+    }
+  ],
+  "python_version": "3.14.7",
+  "reproduction": {
+    "elapsed_seconds": 0.696,
+    "files": [
+      {
+        "bytes": 3148718,
+        "file": "ood_delay.jsonl",
+        "records": 102,
+        "sha256": "30c0cfaabc10a0b6d5887901bbf8af2f784b7abdde63a3eb010cbd68af50db0d"
+      },
+      {
+        "bytes": 12007358,
+        "file": "ood_length.jsonl",
+        "records": 102,
+        "sha256": "e75e3788e19a3f45ed82e1369560dceda5205fe71bc78ba96f7d85c34b2f4586"
+      },
+      {
+        "bytes": 1669156,
+        "file": "ood_revisions.jsonl",
+        "records": 54,
+        "sha256": "b3a9c5fa35f336ed848a2fa0c85ce457f217a390796f9ec1ba28b1def069f244"
+      },
+      {
+        "bytes": 6296663,
+        "file": "test.jsonl",
+        "records": 204,
+        "sha256": "0e819a926715712c086376f4ed8ff6d312096e847bc3fd195c8f8ae7c2368d13"
+      },
+      {
+        "bytes": 12593732,
+        "file": "train.jsonl",
+        "records": 408,
+        "sha256": "a2972cdd6a490b1502cba4af49931f376cacbbf0e12ababf3a454b36a6908aef"
+      },
+      {
+        "bytes": 6297887,
+        "file": "validation.jsonl",
+        "records": 204,
+        "sha256": "7da99b3199e288020394b20344081b05326481ba5ab44693840e673cc2d2b2f0"
+      }
+    ],
+    "peak_rss_kib_linux": 21276,
+    "result": "passed",
+    "source_hashes_match": true,
+    "stored_files_match": true
+  },
+  "review_date": "2026-10-29",
+  "scope": "Fresh local checks; not historical evidence or model evaluation.",
+  "source_sha256": {
+    "memory_interference/__init__.py": "9d5a36bf33a650b33c784eb62d088e12c241e3e4618adf5c86e1470afd3b7039",
+    "memory_interference/__main__.py": "3184f0327c5b68a910d810136e899d4ffbcc549be764adb85e24a629a5b5bf36",
+    "memory_interference/generator.py": "7ac71616529e3e2ad79a5b3411c0c1be87c134ccfe0845112f379502f38fe8f4",
+    "memory_interference/machine.py": "19b54962db959b8f793309d5702839551ec31e758674247802c205f278e5920d",
+    "memory_interference/oracle.py": "95e907cb6fb9ab9a03dc4c1dabd7c968e2bab679d69b2338fd9d27430a5f4d0c",
+    "memory_interference/render.py": "33f21161a9f3c04fff3d59de8afafebb9da97d6bc535f94365e3fc37f9a0c93c",
+    "memory_interference/scoring.py": "7100baa0b490fccdbb226085b351316ebad27623b3162eba0dc764ae6b508046",
+    "memory_interference/validation.py": "72db2820e8a59e8b4c0ba8a0ca66f9eaa96210afebbba6b603a31371e38decf4",
+    "schemas/record-v1.1.schema.json": "5b09e95bea5878f4dd35a591c4d76c03322cc6eb63d94a8c537ddf65791d0bf1",
+    "schemas/record-v1.schema.json": "b9a90eaea50cabda3f309c87b02e98522276456e03d4d7dae0fd30eaf288a696",
+    "scripts/reproduce.py": "dddda7ddeab6592f4654a76663a877f1368465c0297178332f5793c7c2a34f36",
+    "scripts/run_tests.py": "bf1145c93907718abd1d523e0e99c2e606f2e0e6b86411f9f59afa7b9ea7888e",
+    "tests/test_amendment_v1_1.py": "55f22be9df66f9cec3ee23818741f7dd2d5d34e62db47bdb02f64088ffbc0d8a",
+    "tests/test_system.py": "93c52ff564b01ff4c618f89364912e6eda1a1a802f928154407fb20ebb6a36cc"
+  },
+  "tests": {
+    "cpu_threads": 1,
+    "elapsed_seconds": 3.505,
+    "errors": [],
+    "exhaustive_query_cases": 649452,
+    "exhaustive_streams": 9331,
+    "failed": [],
+    "passed": [
+      "test_amendment_v1_1.AmendmentRegressions.test_asof_cutoff_gap_is_positive_and_variable",
+      "test_amendment_v1_1.AmendmentRegressions.test_certificate_and_event_primitive_types_are_checked",
+      "test_amendment_v1_1.AmendmentRegressions.test_gold_boolean_and_integral_float_revision_rejected",
+      "test_amendment_v1_1.AmendmentRegressions.test_nested_span_and_event_numeric_types_rejected",
+      "test_amendment_v1_1.AmendmentRegressions.test_query_and_factor_numbers_forbid_boolean_and_float",
+      "test_amendment_v1_1.AmendmentRegressions.test_review_fixed_rule_fails_asof_even_with_one_revision",
+      "test_amendment_v1_1.AmendmentRegressions.test_tight_delay_high_revision_asof_still_has_gap",
+      "test_amendment_v1_1.AmendmentRegressions.test_unset_query_identity_types_rejected_after_prompt_refresh",
+      "test_system.AdversarialTests.test_invalid_queries_rejected",
+      "test_system.AdversarialTests.test_invalid_streams_rejected",
+      "test_system.AdversarialTests.test_tampered_targets_prompts_spans_and_certificates_rejected",
+      "test_system.CorpusTests.test_budget_failure_keeps_partial_evidence",
+      "test_system.CorpusTests.test_byte_reproducibility_manifest_and_balanced_corpus",
+      "test_system.CorpusTests.test_every_tiny_record_valid",
+      "test_system.CorpusTests.test_invalid_and_confounded_configs_rejected",
+      "test_system.CorpusTests.test_reproduction_checks_saved_corpus",
+      "test_system.CorpusTests.test_schema_references_resolve",
+      "test_system.CorpusTests.test_scorer_rejects_wrong_provenance_and_missing_ids",
+      "test_system.CorpusTests.test_seed_determinism_and_sensitivity",
+      "test_system.MetamorphicTests.test_changing_selected_write_changes_target",
+      "test_system.MetamorphicTests.test_eight_interference_variants_invariant",
+      "test_system.MetamorphicTests.test_irrelevant_prefix_and_suffix_do_not_change_answer",
+      "test_system.MetamorphicTests.test_named_revision_queries_do_not_always_select_first",
+      "test_system.MetamorphicTests.test_stream_length_ood_keeps_controlled_answer_delay",
+      "test_system.MetamorphicTests.test_symbol_bijection_equivariance",
+      "test_system.OracleTests.test_cutoff_is_inclusive_and_late_mutations_excluded",
+      "test_system.OracleTests.test_deletion_then_recreation_and_missing_revision",
+      "test_system.OracleTests.test_exhaustive_small_streams",
+      "test_system.OracleTests.test_stale_recall_does_not_overwrite"
+    ],
+    "peak_rss_kib_linux": 29524,
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [GCC 13.3.0]",
+    "result": "passed",
+    "skipped": [],
+    "tests_run": 29
+  }
+}
